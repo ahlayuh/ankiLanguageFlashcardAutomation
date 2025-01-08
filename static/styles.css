@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    padding: 20px 0;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 27%, rgba(0,212,255,1) 100%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.header-image {
+    width: 200px; 
+    height: auto; 
+    margin-bottom: 10px; 
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.language-selectors {
+    display: flex; 
+    gap: 20px;     
+}
+
+.language-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.button-group {
+    display: flex; 
+    gap: 10px;  
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button,
+.clear-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-btn {
+    background-color: rgb(224, 3, 3);
+    color: white;
+}
+
+.clear-btn:hover {
+    background-color: darkred;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+textarea, select {
+    padding: 5px;
+    font-size: 16px;
+}

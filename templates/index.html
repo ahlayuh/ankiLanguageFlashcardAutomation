@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Flashcard Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='earth-logo.png') }}" alt="Earth Logo" class="header-image">
+
+        <h1>Language Flashcard Maker</h1>
+        <form id="translationForm" action="/translate" method="POST" class="form-container">
+            <div class="language-selectors">
+                <div class="language-group">
+                    <label for="source_lang">From:</label>
+                    <select id="source_lang" name="source_lang" required>
+                        <option value="" disabled selected>Select Language</option>
+                        {% for code, language in languages.items() %}
+                        <option value="{{ code }}">{{ language }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="language-group">
+                    <label for="target_lang">To:</label>
+                    <select id="target_lang" name="target_lang" required>
+                        <option value="" disabled selected>Select Language</option>
+                        {% for code, language in languages.items() %}
+                        <option value="{{ code }}">{{ language }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div><br><br>
+
+            <label for="words">Enter words/phrases (one per line):</label><br>
+            <textarea id="words" name="words" rows="10" cols="30" required></textarea><br>
+
+            <div class="button-group">
+                <button type="submit" onclick="return validateForm()">Translate</button>
+                <button type="button" class="clear-btn" onclick="clearText()">Clear</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // This function clears the text area when the "Clear" button is clicked
+        function clearText() {
+            document.getElementById('words').value = '';
+        }
+
+        // This function validates the form before submission. Both source and target languages must be selected.
+        function validateForm() {
+            const sourceLang = document.getElementById('source_lang').value;
+            const targetLang = document.getElementById('target_lang').value;
+
+            if (!sourceLang || !targetLang) {
+                alert('Please select both source and target languages before translating.');
+                return false;
+            }
+
+            return true; 
+        }
+
+    </script>
+</body>
+</html>
