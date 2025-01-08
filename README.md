@@ -7,6 +7,7 @@ This Flask-based web application allows users to enter words or phrases, select 
 
 ## Project Structure
 
+```
 /ankiLanguageFlashcardAutomation
 ├── .venv/                     # Virtual environment directory
 ├── static/                    # Static files 
@@ -19,7 +20,7 @@ This Flask-based web application allows users to enter words or phrases, select 
 ├── README.md                  # Project documentation (this file)
 ├── requirements.txt           # Python dependencies
 └── translations.csv           # Output file for translations
-
+```
 
 
 ## Installation
